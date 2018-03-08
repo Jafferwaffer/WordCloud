@@ -1,0 +1,25 @@
+{
+  "name": "wordcloud",
+  "version": "1.0.0",
+  "description": "Web interface for cloud of words",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jafferwaffer/WordCloud.git"
+  },
+  "author": "George Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jafferwaffer/WordCloud/issues"
+  },
+  "homepage": "https://github.com/Jafferwaffer/WordCloud#readme",
+  "dependencies": {
+    "webpack": "^4.1.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.10"
+  }
+}
