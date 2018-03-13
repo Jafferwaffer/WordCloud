@@ -20,3 +20,6 @@ The url for the page will be:
 ```URL
 http://localhost:8080
 ```
+
+Currently working as intended in all modern browsers.
+Known styling issues in IE9-11, functions as intended otherwise.
