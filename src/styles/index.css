@@ -27,6 +27,10 @@ h1 {
   font-weight: bold;
 }
 
+.side-panel .heading.topic-name {
+  height: 40px;
+}
+
 .side-panel .heading > span {
   font-weight: normal;
   margin-left: 8px;

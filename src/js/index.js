@@ -11,13 +11,13 @@ class App extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-12">
             <h1>My Topics Challenge</h1>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-12">
             <WordCloud topics={topics.topics}/>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ label, volume, positive, neutral, negative }) => (
   <div className="side-panel">
-    <div className="heading">Information on topic:
+    <div className="heading topic-name">Information on topic:
       <span>"{label}"</span>
     </div>
     <div className="heading">Total Mentions:

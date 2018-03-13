@@ -9,8 +9,6 @@ export default class WordCloud extends React.Component {
     this.state = {
       selected: props.topics[0]
     }
-
-    this.handleTopicClick = this.handleTopicClick.bind(this);
   }
 
   handleTopicClick = topic => {
