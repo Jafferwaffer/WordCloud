@@ -1,7 +1,7 @@
 import React from 'react';
 import TopicWord from './topicWord';
 import SidePanel from './sidePanel';
-import _ from 'lodash';
+import {shuffle, uniq, includes} from 'lodash';
 import {ckmeans} from 'simple-statistics';
 
 export default class WordCloud extends React.Component {
@@ -10,7 +10,7 @@ export default class WordCloud extends React.Component {
 
     this.state = {
       selected: props.topics[0],
-      topics: _.shuffle(this.groupByVolume(props.topics, 6))
+      topics: shuffle(this.groupByVolume(props.topics, 6))
     }
   }
 
@@ -21,14 +21,14 @@ export default class WordCloud extends React.Component {
 
     // Find groups & clean duplicates
     for (const group of ckmeans(volData, nGroups)) {
-      groupings.push(_.uniq(group));
+      groupings.push(uniq(group));
     }
 
     // TODO: Check if better way to achieve this
     // Assign grp number to topic
     for (const topic of topicsToReturn) {
       for (const [index, group] of groupings.entries()) {
-        if (_.includes(group, topic.volume)) {
+        if (includes(group, topic.volume)) {
           topic.popularity = index;
         }
       }

@@ -4,7 +4,6 @@ import WordCloud from './wordCloud';
 import topics from '../topics.json';
 import '../styles/bootstrap.min.css';
 import '../styles/index.css';
-import _ from 'lodash';
 
 class App extends React.Component {
   render () {
