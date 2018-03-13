@@ -22,24 +22,28 @@ export default class WordCloud extends React.Component {
     const { label, volume, sentiment } = this.state.selected;
 
     return (
-      <div>
-        <div className="cloud">
-          {topics.map((topic) =>
-            <TopicWord
-              key={topic.id}
-              label={topic.label}
-              onClick={e => this.handleTopicClick(topic, e)}
-            />
-          )}
+      <div className="row">
+        <div className="col-sm-8">
+          <div className="cloud">
+            {topics.map((topic) =>
+              <TopicWord
+                key={topic.id}
+                label={topic.label}
+                onClick={e => this.handleTopicClick(topic, e)}
+              />
+            )}
+          </div>
         </div>
 
-        <SidePanel
-          label={label}
-          volume={volume}
-          positive={sentiment.positive}
-          neutral={sentiment.neutral}
-          negative={sentiment.negative}
-        />
+        <div className="col-sm-4">
+          <SidePanel
+            label={label}
+            volume={volume}
+            positive={sentiment.positive}
+            neutral={sentiment.neutral}
+            negative={sentiment.negative}
+          />
+        </div>
       </div>
     );
   }

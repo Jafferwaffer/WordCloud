@@ -1,10 +1,12 @@
 body {
   width: 100%;
-  font-family: Verdana, Geneva, sans-serif;
+}
+
+h1 {
+  margin-left: 8px;
 }
 
 .cloud {
-  width: 60%;
   text-align: justify;
   display: inline-block;
 }
@@ -15,15 +17,19 @@ body {
 }
 
 .side-panel {
-  width: 40%;
-  max-width: 350px;
+  width: 90%;
   display: inline-block;
-  background-color: #a5a5a5;
+  /* background-color: #a5a5a5; */
   border-radius: 4px;
 }
 
-.side-panel div {
-  margin: 16px;
+.side-panel .heading {
+  font-weight: bold;
+}
+
+.side-panel .heading > span {
+  font-weight: normal;
+  margin-left: 8px;
 }
 
 .side-panel .positive-count {

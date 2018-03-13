@@ -2,16 +2,20 @@ import React from 'react';
 
 export default ({ label, volume, positive, neutral, negative }) => (
   <div className="side-panel">
-    <div>Information on topic: "{label}"</div>
-    <div>Total Mentions: {volume}</div>
+    <div className="heading">Information on topic:
+      <span>"{label}"</span>
+    </div>
+    <div className="heading">Total Mentions:
+      <span>{volume}</span>
+    </div>
     <br />
-    <div>Positive Mentions:
+    <div className="heading">Positive Mentions:
       <span className="positive-count">{positive ? positive: 0}</span>
     </div>
-    <div>Neutral Mentions:
+    <div className="heading">Neutral Mentions:
       <span className="neutral-count">{neutral ? neutral : 0}</span>
     </div>
-    <div>Negative Mentions:
+    <div className="heading">Negative Mentions:
       <span className="negative-count">{negative ? negative : 0 }</span>
     </div>
   </div>
