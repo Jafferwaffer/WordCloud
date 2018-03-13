@@ -5,6 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var APP_DIR = path.resolve(__dirname, 'src/js');
 
 var config = {
+  devtool: 'cheap-module-eval-source-map',
   entry: APP_DIR + '/index.js',
   output: {
     path: BUILD_DIR,
