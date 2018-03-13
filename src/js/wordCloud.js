@@ -27,6 +27,7 @@ export default class WordCloud extends React.Component {
               <TopicWord
                 key={topic.id}
                 label={topic.label}
+                score={topic.sentimentScore}
                 onClick={e => this.handleTopicClick(topic, e)}
               />
             )}

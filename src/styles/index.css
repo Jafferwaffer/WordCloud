@@ -1,3 +1,8 @@
+:root {
+  --green-color: #19a01c;
+  --red-color: #e2202d;
+}
+
 body {
   width: 100%;
 }
@@ -11,11 +16,26 @@ h1 {
   display: inline-block;
 }
 
+/* Cloud words */
 .topic-word {
   display: inline-block;
   margin: 8px;
+  cursor: pointer;
 }
 
+.topic-word:hover {
+  font-weight: bold;
+}
+
+.topic-word.positive {
+  color: var(--green-color);
+}
+
+.topic-word.negative {
+  color: var(--red-color);
+}
+
+/* Side Panel */
 .side-panel {
   width: 90%;
   display: inline-block;
@@ -37,9 +57,9 @@ h1 {
 }
 
 .side-panel .positive-count {
-  color: #19a01c;
+  color: var(--green-color);
 }
 
 .side-panel .negative-count {
-  color: #e2202d;
+  color: var(--red-color);
 }
