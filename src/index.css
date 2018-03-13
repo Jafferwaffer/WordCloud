@@ -1,0 +1,35 @@
+body {
+  width: 100%;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.cloud {
+  width: 60%;
+  text-align: justify;
+  display: inline-block;
+}
+
+.topic-word {
+  display: inline-block;
+  margin: 8px;
+}
+
+.side-panel {
+  width: 40%;
+  max-width: 350px;
+  display: inline-block;
+  background-color: #a5a5a5;
+  border-radius: 4px;
+}
+
+.side-panel div {
+  margin: 16px;
+}
+
+.side-panel .positive-count {
+  color: #19a01c;
+}
+
+.side-panel .negative-count {
+  color: #e2202d;
+}
