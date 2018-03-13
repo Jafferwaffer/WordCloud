@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ label, size, score, selected, onClick }) => {
+export default ({ label, popularity, score, isSelected, onClick }) => {
   let sentiment;
   if (score > 60) {
     sentiment = 'positive';
@@ -10,8 +10,10 @@ export default ({ label, size, score, selected, onClick }) => {
     sentiment = 'neutral';
   }
 
+  const selected = isSelected ? 'selected' : '';
+
   return (
-    <div className={`topic-word ${sentiment} ${size} ${selected}`} onClick={onClick}>
+    <div className={`topic-word ${sentiment} size-${popularity} ${selected}`} onClick={onClick}>
       {label}
     </div>
   );

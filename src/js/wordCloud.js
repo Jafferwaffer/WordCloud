@@ -1,14 +1,40 @@
 import React from 'react';
 import TopicWord from './topicWord';
 import SidePanel from './sidePanel';
+import _ from 'lodash';
+import {ckmeans} from 'simple-statistics';
 
 export default class WordCloud extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selected: props.topics[0]
+      selected: props.topics[0],
+      topics: _.shuffle(this.groupByVolume(props.topics, 6))
     }
+  }
+
+  groupByVolume = (topics, nGroups) => {
+    let topicsToReturn = [...topics];
+    const volData = topicsToReturn.map(x => x.volume);
+    let groupings = [];
+
+    // Find groups & clean duplicates
+    for (const group of ckmeans(volData, nGroups)) {
+      groupings.push(_.uniq(group));
+    }
+
+    // TODO: Check if better way to achieve this
+    // Assign grp number to topic
+    for (const topic of topicsToReturn) {
+      for (const [index, group] of groupings.entries()) {
+        if (_.includes(group, topic.volume)) {
+          topic.popularity = index;
+        }
+      }
+    }
+
+    return topicsToReturn;
   }
 
   handleTopicClick = topic => {
@@ -16,8 +42,8 @@ export default class WordCloud extends React.Component {
   }
 
   render() {
-    const { topics } = this.props;
-    const { label, volume, sentiment } = this.state.selected;
+    const topics  = this.state.topics;
+    const { id, label, volume, sentiment } = this.state.selected;
 
     return (
       <div className="row">
@@ -27,7 +53,9 @@ export default class WordCloud extends React.Component {
               <TopicWord
                 key={topic.id}
                 label={topic.label}
+                popularity={topic.popularity}
                 score={topic.sentimentScore}
+                isSelected={topic.id == id}
                 onClick={e => this.handleTopicClick(topic, e)}
               />
             )}
