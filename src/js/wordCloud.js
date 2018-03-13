@@ -1,7 +1,7 @@
 import React from 'react';
 import TopicWord from './topicWord';
 import SidePanel from './sidePanel';
-import {shuffle, uniq, includes} from 'lodash';
+import {shuffle, uniq, includes} from 'lodash-es';
 import {ckmeans} from 'simple-statistics';
 
 export default class WordCloud extends React.Component {
