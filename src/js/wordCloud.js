@@ -24,7 +24,6 @@ export default class WordCloud extends React.Component {
       groupings.push(uniq(group));
     }
 
-    // TODO: Check if better way to achieve this
     // Assign grp number to topic
     for (const topic of topicsToReturn) {
       for (const [index, group] of groupings.entries()) {
